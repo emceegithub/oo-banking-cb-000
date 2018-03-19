@@ -18,12 +18,6 @@ class Transfer
   end
   
   def execute_transaction
-    #puts "sender_valid? " + @sender.valid?.to_s
-    #puts @sender.balance
-    #puts @amount
-    #puts @sender.balance >= @amount
-    #puts "self_valid? " + self.valid?.to_s
-    #puts "sender.status? " + @sender.status
     if (@status == "pending" && self.valid? == true && @sender.balance >= @amount)
       puts "executing transaction"
       @sender.deposit(-1 * @amount)
